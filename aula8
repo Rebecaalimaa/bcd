@@ -1,0 +1,125 @@
+Aula 08 - Atividade BD - CRUD
+Banco de Dados com Hotel
+Vamos montar um banco de dados de um Hotel
+
+-- Criação do banco de dados
+DROP DATABASE hotel_db;
+CREATE DATABASE hotel_db;
+USE hotel_db;
+
+-- Tabela Clientes
+CREATE TABLE Clientes (
+    cliente_id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    telefone VARCHAR(15)
+);
+
+-- Tabela Quartos
+CREATE TABLE Quartos (
+    quarto_id INT AUTO_INCREMENT PRIMARY KEY,
+    tipo VARCHAR(50) NOT NULL,
+    preco DECIMAL(10, 2) NOT NULL,
+    status VARCHAR(15) NOT NULL CHECK (status IN ('Disponível', 'Ocupado'))
+);
+
+-- Tabela Reservas
+CREATE TABLE Reservas (
+    reserva_id INT AUTO_INCREMENT PRIMARY KEY,
+    cliente_id INT NOT NULL,
+    quarto_id INT NOT NULL,
+    data_checkin DATE NOT NULL,
+    data_checkout DATE NOT NULL
+    
+);
+
+-- Tabela Funcionarios
+CREATE TABLE Funcionarios (
+    funcionario_id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    cargo VARCHAR(50) NOT NULL,
+    salario DECIMAL(10, 2) NOT NULL
+);
+
+-- Tabela Servicos
+CREATE TABLE Servicos (
+    servico_id INT AUTO_INCREMENT PRIMARY KEY,
+    descricao VARCHAR(100) NOT NULL,
+    preco DECIMAL(10, 2) NOT NULL
+);
+
+-- Tabela Pagamentos
+CREATE TABLE Pagamentos (
+    pagamento_id INT AUTO_INCREMENT PRIMARY KEY,
+    reserva_id INT NOT NULL,
+    valor DECIMAL(10, 2) NOT NULL,
+    data_pagamento DATE NOT NULL,
+    metodo_pagamento VARCHAR(50) NOT NULL
+    
+);
+Atividade - 1ª Etapa
+Crie para cada tabela do banco 10 inserts com dados para popular o banco (pode usar IA para ajudar nessa etapa)
+
+Atividade - 2ª Etapa
+Responder as perguntas listadas abaixo em uma folha e entregar ao professor (atividade vale nota)
+
+Perguntas
+Como visualizar todos os clientes?
+
+Como visualizar um cliente específico pelo cliente_id?
+
+Como visualizar todos os quartos disponíveis?
+
+Como visualizar todos os serviços oferecidos?
+
+Como visualizar todas as reservas feitas por um cliente específico?
+
+Como visualizar todos os pagamentos realizados?
+
+Como visualizar todos os funcionários?
+
+Como visualizar um quarto específico pelo quarto_id?
+
+Como visualizar a descrição de um serviço específico pelo servico_id?
+
+Como visualizar os detalhes de uma reserva específica pelo reserva_id?
+
+Como atualizar o nome de um cliente?
+
+Como atualizar o status de um quarto para 'Ocupado'?
+
+Como atualizar o preço de um serviço?
+
+Como atualizar o salário de um funcionário?
+
+Como atualizar a data de checkout de uma reserva?
+
+Como atualizar o email de um cliente?
+
+Como atualizar o tipo de um quarto?
+
+Como atualizar a descrição de um serviço?
+
+Como atualizar o telefone de um cliente?
+
+Como atualizar o cargo de um funcionário?
+
+Como remover um cliente pelo cliente_id?
+
+Como remover um quarto pelo quarto_id?
+
+Como cancelar uma reserva pelo reserva_id?
+
+Como remover um funcionário pelo funcionario_id?
+
+Como remover um serviço pelo servico_id?
+
+Como remover um pagamento pelo pagamento_id?
+
+Como remover todos os clientes sem reservas?
+
+Como remover todos os quartos que estão ocupados?
+
+Como remover todos os serviços com preço menor que 50?
+
+Como remover todos os pagamentos feitos em uma data específica?
