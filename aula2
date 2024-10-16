@@ -1,0 +1,30 @@
+
+Tipo de dados (SQL)
+SQL suporta uma variedade de tipos de dados para armazenar diferentes tipos de informações. Esses tipos de dados são usados para definir a natureza dos valores que podem ser armazenados em uma coluna de uma tabela de banco de dados. Aqui estão os principais tipos de dados e suas diferenças:
+
+Tipos numéricos
+INT ou INTEGER
+SMALLINT
+BIGINT
+FLOAT ou REAL
+DOUBLE
+DECIMAL ou NUMERIC
+
+Tipos de texto
+CHAR(n)
+VARCHAR(n)
+TEXT
+
+Tipos de data e hora
+DATE
+TIME
+DATETIME ou TIMESTAMP
+YEAR
+
+Tipo lógico
+BOOLEAN
+
+Tipos binários
+BINARY(n)
+VARBINARY(n)
+BLOB
